@@ -29,10 +29,10 @@ var (
 		EnvVars:  prefixEnvVars("CHAIN_RPC"),
 		Required: true,
 	}
-	StartingHeightFlag = &cli.Uint64Flag{
-		Name:    "starting-height",
-		Usage:   "The starting height of the chain",
-		EnvVars: prefixEnvVars("STARTING_HEIGHT"),
+	StartBlockNumberFlag = &cli.Uint64Flag{
+		Name:    "start-block-number",
+		Usage:   "The start block number of the chain",
+		EnvVars: prefixEnvVars("START_BLOCK_NUMBER"),
 		Value:   0,
 	}
 	ConfirmationsFlag = &cli.Uint64Flag{
@@ -47,8 +47,8 @@ var (
 		EnvVars: prefixEnvVars("SYN_LOOP_INTERVAL"),
 		Value:   time.Second * 5,
 	}
-	BlocksStepFlag = &cli.UintFlag{
-		Name:    "blocks-step",
+	BlockStepFlag = &cli.UintFlag{
+		Name:    "block-step",
 		Usage:   "Scanner blocks step",
 		EnvVars: prefixEnvVars("BLOCKS_STEP"),
 		Value:   5,
@@ -176,7 +176,7 @@ var requiredFlags = []cli.Flag{
 	ChainIdFlag,
 	ChainRpcFlag,
 	SynIntervalFlag,
-	BlocksStepFlag,
+	BlockStepFlag,
 	ParseIntervalFlag,
 	CallIntervalFlag,
 	PrivateKeyFlag,
@@ -194,7 +194,7 @@ var requiredFlags = []cli.Flag{
 }
 
 var optionalFlags = []cli.Flag{
-	StartingHeightFlag,
+	StartBlockNumberFlag,
 	ConfirmationsFlag,
 	SlaveDbHostFlag,
 	SlaveDbPortFlag,
