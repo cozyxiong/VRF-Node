@@ -1,8 +1,9 @@
 package flags
 
 import (
-	"github.com/urfave/cli/v2"
 	"time"
+
+	"github.com/urfave/cli/v2"
 )
 
 const envVarPrefix = "VRF_NODE"
